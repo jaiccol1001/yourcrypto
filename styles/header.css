@@ -1,0 +1,58 @@
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:30px ;
+    margin-top:-10px;
+    position: fixed;
+    top:0;
+    background-color: #17171f;
+    width: 100%;
+    height: 100px;
+    z-index: 20;
+   
+}
+
+.logo-name{
+    width:200px;
+    display:flex;
+    align-items: center;
+    
+
+}
+span{
+    font-family:pacifico;
+}
+.site{
+   margin-left:20px;
+   font-family: monoton, arial, sans-serif;
+   color:rgb(41, 31, 238);
+   font-weight: 200;
+   cursor: pointer;
+}
+li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    font-size:20px;
+    cursor: pointer;
+}
+.logo{
+    width:60px;
+    height:60px;
+   cursor:pointer;
+}
+.nav-links{
+    list-style: none;
+}
+.nav-links li{
+    display:inline-block;
+    padding: 0px 20px;
+}
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover{
+    color: rgba(0,100,255,1);
+    font-size: 25px;
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="author" content="jai chaturvedi">
+    <meta name="description" content="a crypto tracker site for begineers">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> myCrypto- A live tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="images/mylogo.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lobster&family=Monoton&family=Pacifico&family=Roboto+Mono:ital,wght@0,100;0,400;0,600;0,700;1,400&family=Satisfy&display=swap" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+<script defer src="javascript/livedata.js"></script>
+<script defer src="javascript/script.js"></script>
+<link rel="stylesheet" href="styles/general.css">
+<link rel="stylesheet" href="styles/header.css">
+<link rel="stylesheet" href="styles/footer.css">
+
+</head>
+  <body> 
+  
+    <header>
+        <div class="logo-name">   
+
+        <img class="logo" src="images/mylogo.png" alt="myCrypto">
+        <h1 class="site"><span>your</span>Crypto</h1>
+
+       </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a onclick="change_table(2)"  href="#market">Coins</a></li>
+            <li><a onclick="change_table(1)" href="#market">
+              <abbr title="non fungible tokens">NFTs</abbr>
+            </a></li>
+            <li><a href="contact.html">Contact us</a></li>
+         
+            <li><a href="https://www.coinbase.com/learn/crypto-basics/what-is-cryptocurrency">Resources</a></li>
+        </ul>
+    </nav>
+</header>
+   
+ <!--image slider start-->
+ <div class="slider">
+    <div class="slides">
+      <!--radio buttons start-->
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <!--radio buttons end-->
+      <!--slide images start-->
+      <div class="slide first">
+       <img src="images/crypto_slidingImage.png" alt="">
+      </div>
+      <div class="slide">
+        <a href="#what-crypto"><img src="images/crypto2_slidingImage.avif" alt=""></a>
+      </div>
+      <div class="slide">
+        <img src="images/nft_slidingImage.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="images/what-is-NFT-slidingImage.png" alt="">
+      </div>
+      <!--slide images end-->
+      <!--automatic navigation start-->
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+      <!--automatic navigation end-->
+    </div>
+    <!--manual navigation start-->
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+      <label for="radio4" class="manual-btn"></label>
+    </div>
+    <!--manual navigation end-->
+  </div>
+  <!--image slider end-->
+
+  <script type="text/javascript">
+  var counter = 1;
+  setInterval(function(){
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter > 4){
+      counter = 1;
+    }
+  }, 5000);
+  </script>
+  
+  <!--famous crypto-->
+  <div class="top-coins">
+     Top Coins by Market Cap
+  </div>
+  <div class="famous-crypto">
+      <div class="bitcoin">
+            <div class="coin-img-name1">
+              <img class="coin-1" src="images/coin-1.svg">
+              <p>Bitcoin</p>
+              <p class="usd">BTC/USD</p>
+            </div>
+          <p style="font-size:32px;">$ <span id="bitcoin" style="font-size:35px;"></span></p>
+          <p style="font-size:18px;">USD <span id="bitcoinMarketCap" style="font-size:21px;"></span></p>
+      </div>
+    <div class="ethereum">
+      <div class="coin-img-name2">
+      <img class="coin-2" src="images/coin-2.svg">
+      <p>Ethereum</p>
+      <p class="usd">ETH/USD</p>
+      </div>
+      <p style="font-size:32px;">$ <span id="ethereum" style="font-size:35px;"></span></p>
+      <p style="font: size 18px;">USD <span id="ethereumMarketCap" style="font-size:21px;"></span></p>
+    </div>
+    <div class="binance">
+      <div class="coin-img-name3">
+      <img class="coin-4" src="images/coin-4.svg">
+      <p>BNB</p>
+      <p class="usd">BNB/USD</p>
+      </div>
+      <p style="font-size:32px;">$ <span id="binancecoin" style="font-size:35px;"></span></p>
+      <p style="font-size:18px;">USD <span id="binanceMarketCap" style="font-size:21px;"></span></p>
+    </div>
+    <div class="solana">
+      <div class="coin-img-name4">
+      <img class="coin-5" src="images/coin-5.svg">
+      <p>Solana</p>
+      <p class="usd">SOL/USD</p>
+      </div>
+      <p style="font-size:32px;">$ <span id="solana" style="font-size:35px;"></span></p>
+      <p style="font-size:18px;">USD <span id="solanaMarketCap" style="font-size:21px;"></span></p>
+    </div>
+    </div>
+
+    <div id ="market" class="market-tab">
+    <p class="market-update">Market Update</p>
+    
+ 
+  <ul class="tab-nav">
+
+
+    <li>
+      <button class="tab-btn" onclick="change_table(2)">Coins</button>
+    </li>
+
+    <li>
+      <button class="tab-btn" onclick="change_table(1)">NFT Coins</button>
+    </li>
+
+  </ul>
+ 
+  <!--table coin start-->
+  <table id="TABLE1">
+  
+   <tr>
+    
+    <th class="heading">#</th>
+    <th class="heading">Name</th>
+    <th class="heading">Last Price</th>
+    <th class="heading">Market Cap</th>
+    
+   </tr>
+  
+   
+   <tr>
+    <td>1</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-1.svg"> <p>Bitcoin</p>
+     </div>
+    </td>
+    <td>$ <span id="bitcoin1">000</span></td>
+    <td>$ <span id="bitcoinMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>2</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-2.svg"> <p>Ethereum</p>
+     </div>
+    </td>
+    <td>$ <span id="ethereum1">000</span></td>
+    <td>$ <span id="ethereumMarketCap1">000</span></td>
+
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-3.svg" > <p>Tether</p>
+     </div>
+    </td>
+    <td>$ <span id="tether1">000</span></td>
+    <td>$ <span id="tetherMarketCap1">000</span></td>
+
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-4.svg"> <p>Binance</p>
+     </div>
+    </td>
+    <td>$ <span id="binancecoin1">000</span></td>
+    <td>$ <span id="binancecoinMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>5</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-5.svg"> <p>Solana</p>
+     </div>
+    </td>
+    <td>$ <span id="solana1">000</span></td>
+    <td>$ <span id="solanaMarketCap1">000</span></td>
+
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-6.svg"> <p>XRP</p>
+     </div>
+    </td>
+    <td>$ <span id="xrp1">000</span></td>
+    <td>$ <span id="xrpMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>7</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/coin-7.svg"> <p>Cardano</p>
+     </div>
+    </td>
+    <td>$ <span id="cardano1">000</span></td>
+    <td>$ <span id="cardanoMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>8</td>
+    <td>
+     <div class="market-coin"> 
+      <img src="images/polkadot.svg"> <p>polkadot</p>
+     </div>
+    </td>
+    <td>$ <span id="polkadot1">000</span></td>
+    <td>$ <span id="polkadotMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>9</td>
+    <td>
+     <div class="market-coin"> 
+      <img style ="border-radius: 17px;"src="images/dogecoin.png"><p>Dogecoin</p>
+     </div>
+    </td>
+    <td>$ <span id="dogecoin1">000</span></td>
+    <td>$ <span id="dogecoinMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>10</td>
+    <td>
+     <div class="market-coin"> 
+      <img style ="border-radius: 17px;"src="images/Litecoin.png"><p> Litecoin</p>
+     </div>
+    </td>
+    <td>$ <span id="litecoin1">000</span></td>
+    <td>$ <span id="litecoinMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>11</td>
+    <td>
+     <div class="market-coin"> 
+      <img style ="border-radius: 17px;"src="images/stellar.png"><p>Stellar</p>
+     </div>
+    </td>
+    <td>$ <span id="stellar1">000</span></td>
+    <td>$ <span id="stellarMarketCap1">000</span></td>
+
+   </tr>
+
+   <tr>
+    <td>12</td>
+    <td>
+     <div class="market-coin"> 
+      <img style ="border-radius: 17px;"src="images/Chainlink.png"><p>Chainlink</p>
+     </div>
+    </td>
+    <td>$ <span id="chainlink1">000</span></td>
+    <td>$ <span id="chainlinkMarketCap1">000</span></td>
+
+   </tr>
+    
+  </table>
+
+  <!--table NFT coin start-->
+
+ 
+ <table id="TABLE2" class="NFT">
+  
+  <tr>
+   
+   <th class="heading">#</th>
+   <th class="heading">Name</th>
+   <th class="heading">Last Price</th>
+   <th class="heading">Market Cap</th>
+   
+  </tr>
+ 
+  
+  <tr>
+   <td>1</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/apecoin.webp"> <p>ApeCoin</p>
+    </div>
+   </td>
+   <td>$ <span id="apecoin1">000</span></td>
+   <td>$ <span id="apecoinMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>2</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/flow.webp"> <p>Flow</p>
+    </div>
+   </td>
+   <td>$ <span id="flow1">000</span></td>
+   <td>$ <span id="flowMarketCap1">000</span></td>
+
+  </tr>
+  <tr>
+   <td>3</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/decentraland-mana.webp" > <p>Decentraland</p>
+    </div>
+   </td>
+   <td>$ <span id="decentraland1">000</span></td>
+   <td>$ <span id="decentralandMarketCap1">000</span></td>
+
+  </tr>
+  <tr>
+   <td>4</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/enjin-coin-logo.webp"> <p>EnjinCoin</p>
+    </div>
+   </td>
+   <td>$ <span id="enjin1">000</span></td>
+   <td>$ <span id="enjinMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>5</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/Chiliz.webp"> <p>Chiliz</p>
+    </div>
+   </td>
+   <td>$ <span id="chiliz1">000</span></td>
+   <td>$ <span id="chilizMarketCap1">000</span></td>
+
+  </tr>
+  <tr>
+   <td>6</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/azuki.webp"> <p>Azuki</p>
+    </div>
+   </td>
+   <td>$ <span id="azuki1">000</span></td>
+   <td>$ <span id="azukiMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>7</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/edda.webp"> <p>EddaSwap</p>
+    </div>
+   </td>
+   <td>$ <span id="edda1">000</span></td>
+   <td>$ <span id="eddaMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>8</td>
+   <td>
+    <div class="market-coin"> 
+     <img src="images/playdapp.webp"> <p>Playdapp</p>
+    </div>
+   </td>
+   <td>$ <span id="playdapp1">000</span></td>
+   <td>$ <span id="playdappMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>9</td>
+   <td>
+    <div class="market-coin"> 
+     <img style ="border-radius: 17px;"src="images/opulous.webp"><p>Opulous</p>
+    </div>
+   </td>
+   <td>$ <span id="opulous1">000</span></td>
+   <td>$ <span id="opulousMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>10</td>
+   <td>
+    <div class="market-coin"> 
+     <img style ="border-radius: 17px;"src="images/NFTX_(Real).webp"><p> NFTX</p>
+    </div>
+   </td>
+   <td>$ <span id="nftx1">000</span></td>
+   <td>$ <span id="nftxMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>11</td>
+   <td>
+    <div class="market-coin"> 
+     <img style ="border-radius: 17px;"src="images/dinoegg.webp"><p>Dinoegg</p>
+    </div>
+   </td>
+   <td>$ <span id="dino1">000</span></td>
+   <td>$ <span id="dinoMarketCap1">000</span></td>
+
+  </tr>
+
+  <tr>
+   <td>12</td>
+   <td>
+    <div class="market-coin"> 
+     <img style ="border-radius: 17px;"src="images/nftrade.webp" ><p>NFTrade</p>
+    </div>
+   </td>
+   <td>$ <span id="nftrade1">000</span></td>
+   <td>$ <span id="nftradeMarketCap1">000</span></td>
+
+  </tr>
+   
+ </table>
+
+  </div>
+<div class="what-crypto" id="what-crypto">
+  <img class="background-crypto" src="images/crypto-background.webp">
+  <p class="heading-what-crypto" >What is Cryptocurrency ?</p>
+  <p class="crypto-info">Cryptocurrency, sometimes called crypto-currency or crypto, is any form of currency that exists digitally or virtually and uses cryptography to secure transactions. Cryptocurrencies don't have a central issuing or regulating authority, instead using a decentralized system to record transactions and issue new units.
+  </p>
+  </div>
+  <div class="how-crypto-div">
+    <p class="heading-how-crypto"> How it Works ?</p>
+    <p class="how-crypto-info">Cryptocurrencies run on a distributed public ledger called blockchain, a record of all transactions updated and held by currency holders.
+
+      Units of cryptocurrency are created through a process called mining, which involves using computer power to solve complicated mathematical problems that generate coins. Users can also buy the currencies from brokers, then store and spend them using cryptographic wallets.</p>
+      </div>
+       <div class="how-NFT-div">
+        <img src="images/nft-background.jpg" class="background-NFT">
+        <div class="NFT-text">
+      <p class="heading-what-NFT" >What is NFT ?</p>
+      <p class="NFT-info">NFT means non-fungible tokens (NFTs), which are generally created using the same type of programming used for cryptocurrencies. In simple terms these cryptographic assets are based on blockchain technology. They cannot be exchanged or traded equivalently like other cryptographic assets.
+      </p>
+      </div>
+    </div>
+  
+  <div class="how-crypto-div">
+    <p class="heading-how-crypto"> How it Works ?</p>
+    <p class="how-crypto-info">The majority of NFTs reside on the Ethereum cryptocurrency's blockchain, a distributed public ledger that records transactions.
+      NFTs are individual tokens with valuable information stored in them.
+      Because they hold a value primarily set by the market and demand, they can be bought and sold just like other physical types of art.
+      NFTs' unique data makes it easy to verify and validate their ownership and the transfer of tokens between owners.</p>
+      </div>
+      <div>
+        <p>Want to Learn more ?</p>
+      </div>
+  </body>
+</html>

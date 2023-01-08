@@ -1,0 +1,475 @@
+*{
+    box-sizing: border-box;
+   margin:0;
+    padding:0;
+    
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+    font-family: Roboto Mono,Arial,sans-serif;
+  
+    background-color: rgb(15, 13, 13);
+    
+    scroll-behavior: smooth;
+}
+abbr{
+  text-decoration:none;
+}
+
+.slider{
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top:120px;
+   /* margin-left:300px;*/
+  }
+  
+  .slides{
+    width: 500%;
+    height: 400px;
+    display: flex;
+    padding-left:440px;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 600px;
+    height: 400px;
+    border-radius: 35px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    padding-left:680px;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid #060d8b;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #060d8b;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 360px;
+    padding-right:200px;
+  }
+  
+  .navigation-auto div{
+    border: 2px solid #060d8b;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #060d8b;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #060d8b;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #060d8b;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #060d8b;
+  }
+  /* top coins*/
+  
+  .top-coins{
+    background-color: #151856;
+    font-family: roboto ;
+    font-size:30px;
+    text-align:center;
+    width:80%;
+    
+    margin-top:30px;
+    margin-bottom: -30px;
+    margin-left:139px;
+    border-radius:30px;
+    height:70px;
+    padding-top:10px;
+    color:aliceblue;
+    border:1px solid grey;
+    position:relative;
+    z-index:40;
+    
+    
+  }
+  
+/* famous crypto*/
+  .famous-crypto{
+    
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-left:100px;
+    margin-top:-40px;
+    background-color: #17171f;
+    width:1300px;
+    height:260px;
+    border-radius: 20px;
+    border:1px solid grey;
+    
+   
+  }
+  .bitcoin{
+    border-radius: 10px;
+    margin:0 15px;
+    flex:1;
+    padding:20px;
+    margin-top:18px;
+    height:70%;
+  }
+  .ethereum{
+    border-radius: 10px;
+    margin:0 15px;
+    margin-top:18px;
+    padding:20px;
+    flex:1;
+    height:70%;
+  }
+  .binance{
+    border-radius: 10px;
+    margin:0 15px;
+    margin-top:18px;
+    padding:20px;
+    flex:1;
+    height:70%;
+  }
+  .solana{
+    border-radius: 10px;
+    margin:0 15px;
+    margin-top:18px;
+    padding:20px;
+    flex:1;
+    height:70%;
+  }
+  .bitcoin:hover{
+    background-color: rgb(46, 52, 73);
+    
+  }
+  .ethereum:hover{
+    background-color: rgb(46, 52, 73);
+  }
+  .binance:hover{
+    background-color: rgb(46, 52, 73);
+  }
+  .solana:hover{
+    background-color: rgb(46, 52, 73);
+  }
+
+  .coin-1 ,.coin-2,.coin-4, .coin-5{
+    width:25px;
+    height:25px;
+  }
+
+.coin-img-name1{
+  width:74%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+.coin-img-name2{
+  width:82%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+.coin-img-name3{
+  width:67%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+.coin-img-name4{
+  width:74%;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+ .famous-crypto {
+  color:white;
+  font-family: DM Sans,sans-serif;
+  font-weight: bold;
+}
+.usd{
+  color:#4c4c51;
+}
+
+.market-update{
+  color:white;
+  font-size: 50px;
+  margin-top:50px;
+  font-family: DM Sans,sans-serif;
+  font-weight: 700;
+  margin-left:140px;
+  margin-bottom:20px;
+}
+
+.tab-nav{
+  display: flex;
+list-style:none;
+width:220px;
+justify-content:space-between;
+margin-left:140px;
+margin-bottom:30px;
+}
+.tab-btn{
+  color:white;
+  font-size: 18px;
+  background-color:#060d8b;
+  padding: 8px 14px;
+  font-weight: 700;
+  border-radius:20px ;
+  transition:0.25s;
+}
+
+.tab-btn:hover{
+  background-color:#151856;
+}
+.tab-btn:active{
+  background-color:#1e26b2;
+}
+table{
+  color:white;
+  width:85%;
+  margin-left: 143px;
+ 
+}
+.market-tab{
+  
+}
+tr{
+  margin-bottom:60px;
+}
+td,th{
+  padding:8px;
+  text-align: left;
+ 
+}
+
+
+th{
+ 
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+
+.market-coin{
+  display:flex;
+  width:100px;
+  justify-content:space-between;
+  align-items:center;
+  font-weight: 700;
+}
+.market-coin img{
+  width:30px;
+  margin-right:12px;
+}
+.market-coin p{
+  flex:1;
+}
+.market-coin img{
+  width:23px;
+  height:23px;
+}
+.NFT{
+  visibility:hidden;
+  margin-top:-589px;
+}
+.what-crypto{
+  color:white;
+  margin-top:190px;
+  height:500px;
+}
+.heading-what-crypto{
+  font-size:50px;
+  font-family: DM Sans,sans-serif;
+  font-weight:bold;
+  margin-left:400px;
+  margin-bottom:30px;
+  margin-top:-360px;
+
+  
+
+}
+.crypto-info{
+  font-size: 25px;
+  width:90%;
+  text-align: center;
+  line-height:40px;
+  margin-left:50px;
+  
+}
+.background-crypto{
+  width:50%;
+  object-fit:contain;
+  border:none;
+  height:400px;
+  margin-left:-20px;
+  
+}
+.heading-how-crypto{
+  color:white;
+  font-size:50px;
+  font-family: DM Sans,sans-serif;
+  font-weight:bold;
+  margin-left:550px;
+  margin-bottom:30px;
+  margin-top:100px;
+}
+
+.how-crypto-info{
+ color:white;
+ font-size: 25px;
+  width:90%;
+  text-align: center;
+  line-height:40px;
+  margin-left:50px;
+ 
+}
+.how-NFT-div{
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:200px;
+  /*background-color: #2f2f33;*/
+}
+.heading-what-NFT{
+  font-size:50px;
+  font-weight: bold;
+
+}
+.NFT-info{
+  font-size:25px;
+  line-height:40px;
+
+  
+}
+.NFT-text{
+  flex:1;
+  margin-left:30px;
+}
+.background-NFT{
+  flex:1;
+  object-fit:contain;
+  width:150px;
+ 
+}
+.how-crypto-div{
+  background-color:#242427;
+  padding-bottom:20px;
+}
+
+/* contact form */
+.container{
+  width:100%;
+  height:100vh;
+  background-color:#040971;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+form{
+  background-color:#17171f;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width:90%;
+  max-width: 600px;
+  border-radius:10px;
+}
+form h3{
+  color:white;
+  font-weight: bold;
+  margin-bottom:20px;
+  font-size: 30px;
+  
+}
+form input, form textarea{
+  color:white;
+     border:0;
+     margin:10px 0;
+     padding:20px;
+     outline:None;
+     background-color:#242427;
+     font-size:16px;
+}
+form button{
+  padding:15px;
+  background-color:#060d8b;
+  color:white;
+  font-size: 18px;
+  border:0;
+  outline:none;
+  cursor:pointer;
+  border-radius:50px;
+  margin-top:20px;
+   font-weight: bold;
+   transition:0.18s ease-in;
+}
+form button:hover{
+  opacity:0.7;
+}

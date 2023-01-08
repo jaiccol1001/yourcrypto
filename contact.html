@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> myCrypto- A live tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lobster&family=Monoton&family=Pacifico&family=Roboto+Mono:ital,wght@0,100;0,400;0,600;0,700;1,400&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/general.css">
+    <script defer src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    </head>
+    <body> 
+        <div class="container">
+             <form onSubmit="sendEmail();reset();return false;">
+                <h3>Connect with Us</h3>
+                <input type="text" id="name" placeholder="Enter your Name" required>
+
+                <input type="email" id="email" placeholder="Enter your Email" required>
+
+                <input type="text" id="ph-number"placeholder="Enter your Contact Number" required>
+                <textarea id="enquiry" placeholder="Ask us anything...."></textarea>
+                <button type="submit">Send</button>
+
+             </form>
+         </div>
+         <script>
+            function sendEmail(){
+            Email.send({
+             SecureToken: "b3835f51-e45f-4173-a990-15d317665dcd",
+         
+            To : 'jai.chaturvedi1861@gmail.com',
+            From : "ferlinfernendo@gmail.com",
+            Subject : "Contact details a user",
+            Body : "name : "+document.getElementById('name').value+"<br> email : "+document.getElementById('email').value+"<br> phone Number : "+document.getElementById('ph-number').value+"<br> Enquiry : "+document.getElementById('enquiry').value,
+        }).then(
+        message => alert(message)
+        );
+    }
+         </script> 
+    </body>
+</html>
